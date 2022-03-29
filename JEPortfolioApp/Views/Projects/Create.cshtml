@@ -1,0 +1,118 @@
+﻿@model JEPortfolioApp.Models.Project
+
+@{
+    ViewData["Title"] = "Create";
+
+    List<string> imagePaths = new List<String>();
+
+    if(ViewData["enviroment"] != null)
+    {
+        foreach(string _path in Directory.GetFiles($"{ViewData["enviroment"]}/images/"))
+        {
+            var truePath = System.IO.Path.GetFileName(_path);
+            imagePaths.Add($"/images/{truePath}");
+        }
+    }
+    else
+    {
+        <p>Web Root Null!</p>
+    }
+
+    string imageResult = "", fileResult = "";
+
+    if(ViewData["selectedImage"] != null)
+    {
+        imageResult = (string)ViewData["selectedImage"];
+    }
+
+    if(ViewData["fileLocation"] != null)
+    {
+        fileResult = (string)ViewData["fileLocation"];
+    }
+}
+
+<h1>Create</h1>
+
+<h4>Project</h4>
+<hr />
+
+<br/>
+<h5>Select Image</h5>
+@{
+    int count = 0;
+    foreach(string path in imagePaths)
+    {
+        <a href="@Url.Action("SelectImage", "Projects", new {name=$"{path}", file=$"{fileResult}"})">
+        <img src="@path" height=48 width=48/>
+        </a>
+    
+        if(count > 3)
+        {
+            count = 0;
+            <br/>
+        }
+    
+        count++;
+    }
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProjectName" class="control-label"></label>
+                <input asp-for="ProjectName" class="form-control" />
+                <span asp-validation-for="ProjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePath" class="control-label"></label>
+                <input asp-for="ImagePath" class="form-control" value="@imageResult" readonly="readonly"/>
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilePath" class="control-label"></label>
+                <input asp-for="FilePath" class="form-control" value="@fileResult"/>
+                <span asp-validation-for="FilePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<br/>
+<h4>Upload New Image</h4>
+<form method="post" action="/Projects/ShowFieldsImage" enctype="multipart/form-data">
+    <input type="file" name="pic" /><br/>
+    <input type="submit" value="Upload" />
+</form>
+<h4>Upload New File</h4>
+<form method="post" action="/Projects/UploadFile" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/>
+    <input type="submit" value="Upload" />
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

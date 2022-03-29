@@ -1,0 +1,47 @@
+﻿@model IEnumerable<JEPortfolioApp.Models.Project>
+
+@{
+    ViewData["Title"] = "J.E. Projects";
+
+    IWebHostEnvironment env = null;
+
+    if(ViewData["enviroment"] != null)
+    {
+        env = (IWebHostEnvironment)ViewData["enviroment"];
+    }
+}
+
+<style>
+    .card-img {
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center center;
+       height: 216px;
+       width: 216px;
+    }
+    .card-events {
+        background-color: #212121;
+        border-radius: 20px;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome!</h1>
+    <p>This website hosts my example projects and works. This Website also serves as an example project and is written in C# using the ASP.Net MVC Framework.</p>
+    <p>Below are preview cards of my projects. For more details click the "Projects" section above.</p>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        @foreach(var item in Model){
+            <div class="col-sm-2 py-1 d-flex align-items-stretch">
+                <ion-card class="card-events">
+                    <div class="card-img" style="background-image:url('@item.ImagePath')"></div>
+                    <ion-card-content>
+                        <h4> @item.ProjectName</h4>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+        }
+    </div>
+</div>
