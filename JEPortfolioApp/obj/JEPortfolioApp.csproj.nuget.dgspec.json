@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ziman\\source\\repos\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj": {}
+    "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ziman\\source\\repos\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj": {
+    "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ziman\\source\\repos\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
+        "projectUniqueName": "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
         "projectName": "JEPortfolioApp",
-        "projectPath": "C:\\Users\\ziman\\source\\repos\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
+        "projectPath": "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
         "packagesPath": "C:\\Users\\ziman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ziman\\source\\repos\\JEPortfolioApp\\JEPortfolioApp\\obj\\",
+        "outputPath": "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\ziman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

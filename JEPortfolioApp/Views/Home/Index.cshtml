@@ -11,7 +11,7 @@
     }
 }
 
-<style>
+<style>     
     .card-img {
        background-size: cover;
        background-repeat: no-repeat;
@@ -23,25 +23,74 @@
         background-color: #212121;
         border-radius: 20px;
     }
+    .cover-img{
+        max-width: 60%;
+        max-height: 100%;
+        display: block;
+        padding: 0;
+        margin: 0 auto;
+        border-radius:25px;
+    }
+    .box{
+        margin: 0 auto;
+        padding: 0;
+    }   
+    .project-card{
+        padding-left:15px;
+        padding-right:15px;
+        padding-top:15px;
+        padding-bottom:5px;
+        outline:ridge;
+        outline-color:rebeccapurple;
+        box-shadow:15px 10px 15px black;
+    }
+    .project-card-img{
+        outline: unset;
+        outline-color: #212121;
+        outline-width: thick;
+        outline-style: inset;
+    }
+    .zoom {
+        transition: transform .2s; /* Animation */
+    }
+
+    .zoom:hover {
+        transform: scale(1.25); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    .project-card-grid{
+        display: grid;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
 </style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome!</h1>
-    <p>This website hosts my example projects and works. This Website also serves as an example project and is written in C# using the ASP.Net MVC Framework.</p>
-    <p>Below are preview cards of my projects. For more details click the "Projects" section above.</p>
-</div>
-
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        @foreach(var item in Model){
-            <div class="col-sm-2 py-1 d-flex align-items-stretch">
-                <ion-card class="card-events">
-                    <div class="card-img" style="background-image:url('@item.ImagePath')"></div>
-                    <ion-card-content>
-                        <h4> @item.ProjectName</h4>
-                    </ion-card-content>
-                </ion-card>
-            </div>
-        }
+<body style="background-image: url('images/Background space.png'); background-repeat:no-repeat; background-attachment:fixed; background-size: 100% 100%;">
+    <div class="box" style="padding-bottom:100px; padding-top:50px;">
+        <img class="cover-img" src="/images/BLOCK STABBER BANNER.png" />
     </div>
-</div>
+</body>
+
+
+<footer class="border-top footer text-muted">
+    <center><h2 style="padding-top:50px; text-shadow: 3px 3px black;">Featured Work</h2></center>
+    <div class="container" style="padding-top:50px;padding-bottom:25px">
+        <div class="container-fluid">
+            <div class="row justify-content-left">
+                <div class="project-card-grid d-flex">
+                    @foreach(var item in Model){
+                        <a href="/Projects/Details/@item.Id" class="zoom" style="color:transparent">
+                            <div class="container py-1 px-1 d-flex" style="padding-left:10px; padding-right:10px;">
+                                <ion-card class="card-events project-card">
+                                    <div class="card-img project-card-img" style="background-image:url('@item.ImagePath')"></div>
+                                    <ion-card-content>
+                                        <center style="padding-top:10px"><h6> @item.ProjectName</h6></center>
+                                    </ion-card-content>
+                                </ion-card>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
