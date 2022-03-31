@@ -56,9 +56,17 @@
                     }
                     @if (item.FilePath != string.Empty && item.FilePath != null)
                     {
-                        <text> | </text><a href="@Url.Action("DownloadFile", "Projects", new {link=$"{item.FilePath}"})">
-                        <text>Download</text>
-                        </a>
+                        <text> | </text>
+                        @if (item.FilePath.Contains("https://"))
+                        {
+                            <a href="@item.FilePath" target="_blank">Download</a> 
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("DownloadFile", "Projects", new {link=$"{item.FilePath}"})">
+                            <text>Download</text>
+                            </a>
+                        }
                     }
                 </td>
             </tr>

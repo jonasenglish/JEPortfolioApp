@@ -225,16 +225,6 @@ namespace JEPortfolioApp.Controllers
         [HttpGet("download")]
         public IActionResult DownloadFile([FromQuery] string link, [FromServices] IWebHostEnvironment env)
         {
-            if (link.Contains("https://"))
-            {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-                {
-                    FileName = link,
-                    UseShellExecute = true,
-                });
-                return View("Index", _context.Project.ToList());
-            }
-
             var net = new System.Net.WebClient();
             var data = net.DownloadData(String.Concat(env.WebRootPath, link));
             var content = new MemoryStream(data);

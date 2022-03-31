@@ -11,7 +11,13 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProjectName)
+            @Html.Raw("Image")
+        </dt>
+        <dd class = "col-sm-10">
+            <img src=@Url.Content(Model.ImagePath) alt="No Image Found!" style="width:20vw" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.Raw("Project Title")
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ProjectName)
@@ -23,17 +29,29 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Month)
+            @Html.Raw("Date Finished")
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Month)
+            @Html.Raw($"{Model.Month}/{Model.Year}")
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Year)
-        </dd>
+         @if (Model.FilePath != string.Empty && Model.FilePath != null)
+        {
+            <dt class = "col-sm-10">
+                @Html.Raw("Download Link");
+            </dt>
+            <dd class = "col-sm-10">
+                 @if (Model.FilePath.Contains("https://"))
+                 {
+                     <a href="@Model.FilePath" target="_blank">Download</a> 
+                 }
+                 else
+                 {
+                     <a href="@Url.Action("DownloadFile", "Projects", new {link=$"{Model.FilePath}"})">
+                     <text>Download</text>
+                     </a>
+                 }
+            </dd>
+        }
     </dl>
 </div>
 <div>

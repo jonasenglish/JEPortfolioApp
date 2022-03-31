@@ -4294,7 +4294,7 @@
       ]
     },
     "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "sha512": "EGoBmf3Na2ppbhPePDE9PlX81r1HuOZH5twBrq7couJZiPTjUnD3648balerQJO6EJ8Sj+43+XuRwQ7r+3tE3w==",
       "type": "package",
       "path": "microsoft.csharp/4.5.0",
       "files": [
@@ -7481,7 +7481,7 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+      "sha512": "Z1UfSF6dlpCdZdxh6LeoGlYH+q6ptG/iiIWgUUeKhE3DbQACmZkU7Sz2nOX0qdHjz72MOdYRbkSJ5Qwl6sZgvg==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
@@ -9902,23 +9902,22 @@
   },
   "packageFolders": {
     "C:\\Users\\ziman\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
+      "projectUniqueName": "C:\\Users\\ziman\\Documents\\GitHub\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
       "projectName": "JEPortfolioApp",
-      "projectPath": "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
+      "projectPath": "C:\\Users\\ziman\\Documents\\GitHub\\JEPortfolioApp\\JEPortfolioApp\\JEPortfolioApp.csproj",
       "packagesPath": "C:\\Users\\ziman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ziman\\Source\\Repos\\jonasenglish\\JEPortfolioApp\\JEPortfolioApp\\obj\\",
+      "outputPath": "C:\\Users\\ziman\\Documents\\GitHub\\JEPortfolioApp\\JEPortfolioApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\ziman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
